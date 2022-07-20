@@ -1,7 +1,7 @@
 import './App.css';
 import a from 'axios'
 import { useEffect, useState } from 'react';
-import { FaCity , FaMale, FaFemale } from "react-icons/fa";
+import { FaCity , FaMale, FaFemale} from "react-icons/fa";
 import { BsFillPersonFill} from "react-icons/bs";
 
 
@@ -25,16 +25,19 @@ function App() {
 
   console.log(data);
   return (
-    <div className="App">
-      <img src={data.picture?.large} alt="pictrue"/>
-      <div className="container"> 
-      <li className="items">
-      {data.gender==='male'? <FaMale className='icons'/>:<FaFemale className='icons'/> }{data.gender}
-        </li>
-      <li className="items"><FaCity className='icons'/> {data.location?.city}</li>
-      <li className="items"> <BsFillPersonFill className='icons'/> {data.name?.first} {data.name?.last}</li>
-      </div>     
-    </div>
+    <>
+      <div className="App">
+      <p>**Hmasof is love**</p>
+        <img src={data.picture?.large} alt="pictrue"/>
+        <div className="container"> 
+        <li className="items">
+        {data.gender==='male'? <FaMale className='icons'/>:<FaFemale className='icons'/> }{data.gender}
+          </li>
+        <li className="items"><FaCity className='icons'/> {data.location?.city}</li>
+        <li className="items"> <BsFillPersonFill className='icons'/> {data.name?.first} {data.name?.last}</li>
+        </div>     
+      </div>
+    </>
   )
 }
 
